@@ -28,7 +28,7 @@ export function snapshot(d) {
   const at = d.as_of || new Date().toISOString();
   const ads = {}; for (const a of d.ads || []) ads[a.id] = adSnap(a);
   const B = d.budget_call || {};
-  const budget = { action: B.action || null, pct: B.pct ?? null, why: B.why || "", rule: B.rule || null, scale: d.account?.daily_budget?.scale ?? null, test: d.account?.daily_budget?.test ?? null };
+  const budget = { action: B.action || null, pct: B.pct ?? null, why: B.why || "", rule: B.rule || null, lines: B.lines ? { raise: B.lines.raise, hold: B.lines.hold, floor: B.lines.floor } : null, would: B.would || null, scale: d.account?.daily_budget?.scale ?? null, test: d.account?.daily_budget?.test ?? null };
   return { at, ads, budget };
 }
 
