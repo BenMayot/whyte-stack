@@ -1,0 +1,1 @@
+{"name": "whyte-ads-operator", "private": true, "type": "module", "dependencies": {"@netlify/functions": "^4.0.0", "@netlify/blobs": "^10.0.0"}}

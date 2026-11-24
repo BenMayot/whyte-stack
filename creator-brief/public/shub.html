@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>WHYTE · Founder briefs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fraunces:opsz,wght,SOFT@9..144,400..600,50&display=swap">
+<style>
+:root{--ink:#171719;--ink2:#3A3A3F;--muted:#6C6C73;--line:#EAE8E4;--line2:#D8D5CF;--wash:#F7F5F1;--pink:#F7B5D0;--pink-soft:#FDEEF4;--pink-ink:#9A2F5E;--mint:#ABDBC6;--purple:#B9A6E8;
+  --serif:"Fraunces",Georgia,serif;--sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box} body{margin:0;background:#fff;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;padding-top:env(safe-area-inset-top,0)}
+.hidden{display:none!important} button{font:inherit;cursor:pointer}
+.col{max-width:760px;margin:0 auto;padding:0 max(20px,env(safe-area-inset-left,0px))}
+header{border-bottom:1px solid var(--line);padding:14px 0} header .col{display:flex;align-items:center;gap:12px} header img{height:28px;margin-top:5px} header span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+main{padding:32px 0 80px}
+.k{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+h1{font-family:var(--serif);font-weight:500;font-size:40px;line-height:1.05;letter-spacing:-.02em;margin:8px 0 10px}
+.lede{color:var(--ink2);font-size:17px;margin:0}
+.how{margin-top:22px;background:var(--wash);border-radius:16px;padding:14px 18px;font-size:14.5px;color:var(--ink2)} .how b{color:var(--ink)}
+.brief{border:1px solid var(--line2);border-radius:18px;padding:20px;margin-top:18px}
+.brief.oil{border-top:4px solid var(--mint)} .brief.powder{border-top:4px solid var(--purple)}
+.top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tag{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:3px 8px;border-radius:999px;background:var(--wash);color:var(--ink2)}
+.bid{margin-left:auto;font-size:12px;color:var(--muted);font-weight:600}
+h2{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.1;margin:12px 0 0}
+.dir{font-size:16.5px;margin:12px 0 0}
+.l{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-top:18px} .l.red{color:#B23A3A}
+p{margin:4px 0 0;color:var(--ink2)} ul{margin:6px 0 0;padding-left:18px;color:var(--ink2)} li{margin:4px 0}
+ul.op{list-style:none;padding:0} ul.op li{font-family:var(--serif);font-size:18px;line-height:1.3;color:var(--ink);padding:8px 0;border-bottom:1px solid var(--line)}
+.refs li{font-size:14.5px}
+.dl{margin-top:18px;padding:12px 14px;border-radius:12px;background:var(--pink-soft);color:var(--pink-ink);font-size:14.5px} .dl b{color:var(--ink)}
+.up{display:block;text-align:center;margin-top:12px;background:var(--ink);color:#fff;text-decoration:none;border-radius:14px;padding:14px;font-weight:600}
+.none{border:1px dashed var(--line2);border-radius:16px;padding:18px;color:var(--muted);margin-top:22px}
+.foot{margin-top:30px;font-size:13px;color:var(--muted)}
+#gate{position:fixed;inset:0;background:#fff;display:grid;place-items:center;padding:24px;z-index:9}
+#gate form{width:min(380px,100%);text-align:center} #gate img{height:50px;margin:0 auto 18px;display:block}
+#gate input{width:100%;font:inherit;font-size:16px;padding:13px;border-radius:12px;border:1px solid var(--line2);text-align:center}
+#gate button{width:100%;margin-top:10px;padding:13px;border-radius:12px;border:0;background:var(--ink);color:#fff;font-weight:600}
+#gate .err{min-height:20px;color:#B23A3A;font-size:13px;margin-top:8px}
+.embed header{display:none} .embed main{padding-top:8px}
+</style>
+</head>
+<body>
+<script>if(/[?&]embed=1/.test(location.search)) document.documentElement.classList.add("embed");</script>
+<div id="gate"><form id="gf"><img src="logo.svg" alt="WHYTE"><div class="k">Shub’s corner</div><p style="margin:8px 0 18px">Founder briefs, for Shub only. Enter your password.</p><input id="pw" type="password" placeholder="Password" autocomplete="current-password"><button>Open</button><div class="err" id="ge"></div></form></div>
+<header><div class="col"><img src="logo.svg" alt="WHYTE"><span>Founder briefs</span></div></header>
+<main class="col" id="app"><p class="k">Loading…</p></main>
+<script>
+(function(){
+"use strict";
+var $=function(i){return document.getElementById(i);}, KEY="whyte_shub_pass";
+var esc=function(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");};
+var STATUS={proven:"worked",early:"working so far",testing:"in test now",ran:"ran"};
+function pass(){ try{return localStorage.getItem(KEY)||"";}catch(e){return "";} }
+function gate(msg){ $("gate").classList.remove("hidden"); $("ge").textContent=msg||""; $("pw").focus(); }
+$("gf").addEventListener("submit",function(e){ e.preventDefault(); try{localStorage.setItem(KEY,$("pw").value.trim());}catch(err){} load(); });
+var PVQ=(function(){ var m=/[?&]preview=([^&#]+)/.exec(location.search); return m?"?preview="+m[1]:""; })();
+function watch(adId){
+  var el=document.createElement("div"); el.style.cssText="position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.72);display:grid;place-items:center;padding:16px";
+  el.innerHTML='<div style="width:min(360px,100%);background:#111;border-radius:16px;overflow:hidden"><div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;color:#fff;font-weight:600;font-size:14px">The original<button style="border:0;background:none;color:#fff;font-size:22px;line-height:1" aria-label="Close">×</button></div><div id="wf" style="aspect-ratio:9/16;color:#fff;display:grid;place-items:center;font-size:14px">Loading the ad…</div></div>';
+  document.body.appendChild(el); el.addEventListener("click",function(e){ if(e.target===el||e.target.closest("button")) el.remove(); });
+  fetch("/api/original?id="+encodeURIComponent(adId)+(PVQ?"&"+PVQ.slice(1):"")).then(function(r){return r.json();}).then(function(d){ var f=document.getElementById("wf"); if(f) f.innerHTML=d.video?'<video controls autoplay playsinline style="width:100%;height:100%;background:#000;object-fit:contain"'+(d.poster?' poster="'+esc(d.poster)+'"':'')+'><source src="'+esc(d.video)+'" type="video/mp4"></video>':d.src?'<iframe src="'+esc(d.src)+'" allow="autoplay; encrypted-media" scrolling="no" style="width:100%;height:100%;border:0"></iframe>':'The original could not be loaded.'; }).catch(function(){});
+}
+document.addEventListener("click",function(e){ var w=e.target.closest("[data-watch]"); if(w) watch(w.dataset.watch); });
+function load(){
+  var p=pass(); if(!p && !PVQ){ gate(); return; }
+  fetch("/api/shub"+PVQ,{headers:{"x-shub-pass":p},cache:"no-store"}).then(function(r){
+    if(r.status===401){ try{localStorage.removeItem(KEY);}catch(e){} gate("That’s not it."); throw new Error("auth"); }
+    return r.json();
+  }).then(function(d){ $("gate").classList.add("hidden"); render(d); })
+  .catch(function(e){ if(e.message!=="auth") $("app").innerHTML='<div class="none">Could not load your briefs right now. Try again in a minute.</div>'; });
+}
+function remakes(d){
+  var l=d.remakes||[]; if(!l.length) return "";
+  return '<h1 style="margin-top:38px;font-size:28px">Remake these.</h1><p class="lede">Ads of yours that worked. We want a fresh version of each.</p>'+l.map(function(i){
+    return '<article class="brief '+esc(i.product)+'"><div class="top"><span class="tag">'+esc(i.product==="oil"?"Oil rinse":i.product==="powder"?"Purple powder":"WHYTE")+'</span><span class="tag">'+(i.kind==="remake"?"Film it again":"New opening")+'</span></div>'+
+      '<div style="display:grid;grid-template-columns:84px 1fr;gap:16px;align-items:start;margin-top:12px">'+(i.key?'<img alt="" src="/posters/'+encodeURIComponent(i.key)+'.jpg" onerror="this.style.visibility=\'hidden\'" style="width:84px;aspect-ratio:9/16;object-fit:cover;border-radius:10px">':'<span></span>')+'<div><h2 style="margin:0;font-size:21px;line-height:1.25">'+esc(i.line?"“"+i.line+"”":"One of your ads")+'</h2>'+(i.what?'<p style="margin:4px 0 0">'+esc(i.what)+'</p>':'')+(i.ad_id?'<button data-watch="'+esc(i.ad_id)+'" style="margin-top:10px;border:0;background:#16161A;color:#fff;border-radius:99px;padding:9px 16px;font-weight:700;font-size:13.5px">▶ Watch the original</button>':'')+'</div></div>'+
+      '<div class="l">Keep</div><p>'+esc(i.keep)+'</p><div class="l">Change</div><p>'+esc(i.change)+'</p><div class="dl"><b>Deliver:</b> '+esc(i.deliver)+'</div>'+'</article>'; }).join("");
+}
+function render(d){
+  if(d.preview && !document.getElementById("pvb")){ var b=document.createElement("div"); b.id="pvb"; b.textContent="Preview of the unsent draft. Shub can’t see this yet."; b.style.cssText="background:#F4B8D0;color:#16161A;text-align:center;font-weight:600;font-size:13.5px;padding:8px 12px"; document.body.insertBefore(b,document.body.firstChild); }
+  var h='<div class="k">'+esc(d.week_label||"This week")+'</div><h1>Your briefs this week.</h1>';
+  if(!d.briefs || !d.briefs.length){ $("app").innerHTML=h+'<div class="none">New briefs land every Monday morning. Nothing for you this week yet.</div>'+remakes(d); return; }
+  h+='<p class="lede">'+esc(d.headline||"Built from what sold last week.")+'</p>';
+  h+='<div class="how"><b>How it works:</b> each brief is a direction, not a script. Say it your way. Film <b>2 to 3 different openings</b> for each one, then send the files to Ben the way you usually do. No special folder or file name needed.</div>';
+  d.briefs.forEach(function(b){
+    h+='<article class="brief '+esc(b.product)+'"><div class="top"><span class="tag">'+esc(b.product==="oil"?"Oil rinse":b.product==="powder"?"Purple powder":"WHYTE")+'</span>'+(b.format_name?'<span class="tag">'+esc(b.format_name)+'</span>':'')+'<span class="bid">'+esc(b.id)+'</span></div>';
+    h+='<h2>'+esc(b.title)+'</h2><p class="dir">'+esc(b.direction)+'</p>';
+    if(b.why) h+='<div class="l">Why this, now</div><p>'+esc(b.why)+'</p>';
+    if(b.openings&&b.openings.length) h+='<div class="l">Openings in this spirit</div><ul class="op">'+b.openings.map(function(x){return '<li>'+esc(x)+'</li>';}).join("")+'</ul>';
+    if(b.show) h+='<div class="l">One way to show it</div><p>'+esc(b.show)+'</p>';
+    if(b.points&&b.points.length) h+='<div class="l">Points worth making</div><ul>'+b.points.map(function(x){return '<li>'+esc(x)+'</li>';}).join("")+'</ul>';
+    if(b.avoid&&b.avoid.length) h+='<div class="l red">Leave out</div><ul>'+b.avoid.map(function(x){return '<li>'+esc(x)+'</li>';}).join("")+'</ul>';
+    if(b.references&&b.references.length) h+='<div class="l">Built from</div><ul class="refs">'+b.references.map(function(r){ return '<li>“'+esc(r.hook||"")+'”'+(r.talent?' · '+esc(r.talent):'')+(r.status?' · '+esc(STATUS[r.status]||r.status):'')+'</li>'; }).join("")+'</ul>';
+    h+='<div class="dl"><b>Deliver:</b> '+esc(b.deliver||"2 to 3 versions, each with a different opening.")+'</div>';
+    h+='</article>';
+  });
+  h+=remakes(d);
+  h+='<p class="foot">Updated every Monday morning. Questions: ask Ben.</p>';
+  $("app").innerHTML=h;
+}
+load();
+})();
+</script>
+</body>
+</html>
